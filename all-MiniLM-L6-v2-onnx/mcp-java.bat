@@ -1,24 +1,11 @@
-
-# mcp_settings.json
-```json 
-{
-  "mcpServers": {
-    "qdrant-csharp": {
-      "type": "sse",
-      "url": "http://localhost:8000/sse"
-    },
-    "qdrant-java": {
-      "type": "sse",
-      "url": "http://localhost:8001/sse"
-    }
-  }
-}
-```
-
-# mcp.bat
-```DOS
 @echo off
+:: CMD 코드 페이지를 UTF-8로 변경
+chcp 65001 > nul
+
 title MCP Server - Qdrant Java/Web (Port 8001)
+
+:: Python 입출력을 UTF-8로 강제
+set PYTHONUTF8=1
 
 set check_compatibility=False
 set FASTMCP_SERVER_HOST=0.0.0.0
@@ -40,4 +27,3 @@ set TRANSFORMERS_OFFLINE=1
 
 echo Starting Qdrant Java MCP Server...
 mcp-server-qdrant --transport sse
-```
